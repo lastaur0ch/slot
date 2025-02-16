@@ -135,7 +135,7 @@ const game = () => {
         console.log("Your balance is: $" + balance.toString());
         const numberOfLines = getNumberOfLines();
         const bet = getBet(balance, numberOfLines);
-        balance -= bet * numberOfLines;
+        balance -= bet;
         const reels = spin();
         const rows = transpose(reels);
         printRows(rows);
