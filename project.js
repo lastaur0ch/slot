@@ -125,15 +125,18 @@ const getWinnings = (rows, bet, lines) => {
             winnings += bet * SYMBOLS_VALUES[symbols[0]];
         }
     }
-    console.log(winnings);
     return winnings;
 }
 
-let balance = deposit();
-const numberOfLines = getNumberOfLines();
-const bet = getBet(balance, numberOfLines);
-const reels = spin();
-const rows = transpose(reels);
-printRows(rows);
-const winnings = getWinnings(rows, bet, numberOfLines);
-console.log("You won $" + winnings.toString());
+const game = () => {
+    let balance = deposit();
+    const numberOfLines = getNumberOfLines();
+    const bet = getBet(balance, numberOfLines);
+    const reels = spin();
+    const rows = transpose(reels);
+    printRows(rows);
+    const winnings = getWinnings(rows, bet, numberOfLines);
+    console.log("You won $" + winnings.toString());
+}
+
+game();
